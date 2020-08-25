@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nhentai Downloader</title>
+    <script src="/eel.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="icon" href="./img/icon.ico" type="image/x-icon" sizes="64x64" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <script>
+      resizeTo(960, 540);
+    </script>
+  </head>
+  <body>
+    <nav>
+      <span class="downloadinfo">Author ~~~~ Page: ~~~~ Book Name</span>
+    </nav>
+    <main>
+      <div class="flex-container">
+        <div id="menu">
+          <p>Gallery ID</p>
+          <div id="galleryIDs">
+            <input type="text" class="galleryID" maxlength="6" oninput="value=value.replace(/[^0-9]/g,'')" />
+            <input type="text" class="galleryID" maxlength="6" oninput="value=value.replace(/[^0-9]/g,'')" />
+            <input type="text" class="galleryID" maxlength="6" oninput="value=value.replace(/[^0-9]/g,'')" />
+            <input type="text" class="galleryID" maxlength="6" oninput="value=value.replace(/[^0-9]/g,'')" />
+            <input type="text" class="galleryID" maxlength="6" oninput="value=value.replace(/[^0-9]/g,'')" />
+            <input type="text" class="galleryID" maxlength="6" oninput="value=value.replace(/[^0-9]/g,'')" />
+            <input type="text" class="galleryID" maxlength="6" oninput="value=value.replace(/[^0-9]/g,'')" />
+            <input type="text" class="galleryID" maxlength="6" oninput="value=value.replace(/[^0-9]/g,'')" />
+            <input type="text" class="galleryID" maxlength="6" oninput="value=value.replace(/[^0-9]/g,'')" />
+            <input type="text" class="galleryID" maxlength="6" oninput="value=value.replace(/[^0-9]/g,'')" />
+          </div>
+          <label>
+            <input type="checkbox" id="download" onchange="toggleDownload()" onclick="getGalleryID()" />
+            <div class="icon0">
+              <i class="fa fa-download" aria-hidden="true"><span> Download</span></i>
+            </div>
+          </label>
+          <ul class="columes">
+            <li>
+              <label>
+                <button class="btn" id="Ebtn">
+                  <div><img src="./img/excel.png" /></div>
+                  <span>開啟 Excel</span>
+                </button>
+              </label>
+            </li>
+            <li>
+              <label>
+                <button class="btn" id="Fbtn">
+                  <div><img src="./img/folder.png" /></div>
+                  <span>下載資料夾</span>
+                </button>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div id="preview">
+          <div id="contain" style="width: 376px; height: 330px;"></div>
+          <div id="progressbar">
+            <div id="loading"></div>
+          </div>
+        </div>
+        <div id="status" class="grid-container">
+          <div class="item1">Queue</div>
+          <div class="queue"></div>
+          <div class="item2">Finished</div>
+          <div class="finished"></div>
+          <div class="item3">Status</div>
+          <div class="Status"></div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div id="overall" class="overall-container">
+        <div class="check"><i class="fa fa-check" aria-hidden="true"></i></div>
+        <button class="trash"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        <div class="overall-list lefthover" onmouseover="repeater=setInterval(moveLeft, 40)" onmouseout="clearInterval(repeater)"></div>
+        <div class="overall-list"></div>
+        <div class="overall-list righthover" onmouseover="repeater=setInterval(moveRight, 40)" onmouseout="clearInterval(repeater)"></div>
+      </div>
+    </footer>
+    <script src="function.js"></script>
+  </body>
+</html>

@@ -1,0 +1,507 @@
+/* The part of the Main structure =VVVVV========== */
+* {
+  font-family: Arial, Helvetica, sans-serif, "Microsoft JhengHei";
+}
+
+body {
+  background-color: rgba(13, 13, 13, 1);
+  background: url("./img/NhentaiBK.jpg") black no-repeat fixed center;
+  background-size: contain;
+  margin: 0px;
+  backdrop-filter: blur(3px) brightness(60%);
+}
+
+nav {
+  background: rgba(30, 30, 30, 0.8);
+  min-width: 944px;
+  height: 26px;
+  padding: 0px;
+  margin: 0px;
+}
+
+nav span {
+  display: inline-block;
+  color: rgba(215, 215, 215, 1);
+  padding: 6px 0px 0px 15px;
+  margin: 0px;
+  font-size: 12px;
+  vertical-align: bottom;
+}
+
+main {
+  height: 335px;
+}
+/* The part of the Main structure =^^^^^========== */
+
+/* The part of the galleryIDs =VVVVV============== */
+.flex-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0px 5px 0px 5px;
+}
+
+.flex-container > div {
+  background: rgba(128, 128, 128, 0);
+  height: 335px;
+  margin: 0px 5px 0px 5px;
+  font-size: 30px;
+  text-align: center;
+}
+
+#menu {
+  flex-grow: 1;
+  max-width: 272px;
+  padding: 0px 10px 0px 10px;
+}
+
+#menu p {
+  color: rgb(215, 215, 215);
+  width: 220px;
+  height: 16px;
+  padding: 5px;
+  margin: 5px auto 0px auto;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border: 3px solid rgb(235, 40, 85);
+  border-radius: 15px;
+  letter-spacing: 3px;
+}
+
+#galleryIDs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  margin-bottom: 20px;
+}
+
+input {
+  background: rgba(75, 75, 75, 0.8);
+  padding: 2px;
+  margin: 5px auto 0px auto;
+  text-align: center;
+}
+
+input[type="text"] {
+  color: rgb(215, 215, 215);
+  width: 90px;
+  height: 20px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+  background: rgb(100, 100, 100);
+}
+
+input[type="text"]:disabled {
+  background: rgb(30, 30, 30);
+}
+
+#menu label {
+  position: relative;
+  color: rgb(215, 215, 215);
+  margin: 10px auto 10px auto;
+  list-style: none;
+  text-align: center;
+}
+
+#menu label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+#menu label .icon0 {
+  position: relative;
+  width: 200px;
+  margin: 10px auto 15px auto;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 100%;
+  letter-spacing: 1px;
+}
+
+#menu label .icon0:hover {
+  text-shadow: 0px 0px 6px rgb(215, 215, 215);
+}
+
+#menu label input[type="checkbox"]:checked ~ .icon0 .fa {
+  color: rgb(45, 165, 80);
+  text-shadow: 0px 0px 1px rgb(45, 165, 80), 0px 0px 6px rgb(45, 165, 80);
+  animation: breathing 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes breathing {
+  0% {
+    filter: opacity(1);
+  }
+  100% {
+    filter: opacity(0.2);
+  }
+}
+
+.columes {
+  position: relative;
+  column-count: 2;
+  padding: 0px 20px 0px 20px;
+  margin: 10px auto 10px auto;
+  text-align: center;
+}
+
+.columes li {
+  list-style: none;
+}
+
+/* .columes li label input[type="checkbox"] {
+  position: absolute;
+} */
+
+.columes li label img {
+  width: 48px;
+}
+
+.columes li label .btn {
+  color: rgb(215, 215, 215);
+  font-size: 15px;
+  padding: 0px;
+  opacity: 0.4;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0);
+}
+
+.columes li label .btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+#preview {
+  min-width: 376px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+#contain {
+  padding: 0px;
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  background-size: contain;
+  backdrop-filter: blur(4px) brightness(50%);
+}
+
+#progressbar {
+  height: 5px;
+  width: 100%;
+  backdrop-filter: blur(4px) brightness(50%);
+}
+
+#loading {
+  height: 5px;
+  width: 0%;
+  border-radius: 5px;
+  overflow-x: hidden;
+  background: rgb(45, 165, 80);
+  transition: linear 0.4s;
+}
+
+#status {
+  flex-grow: 1;
+  min-width: 272px;
+}
+
+.check {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  border-radius: 15px 15px 0px 0px;
+  justify-content: center;
+  background: rgba(45, 165, 80);
+}
+
+.trash {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  border-width: 0px;
+  border-radius: 0px 0px 15px 15px;
+  padding: 5px;
+  outline: none;
+  color: white;
+  background: rgba(235, 40, 85);
+  opacity: 0.4;
+}
+
+.trash:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.overall-list {
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
+  border-radius: 15px;
+  background: rgba(45, 45, 45, 0.7);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: 1;
+}
+
+.overall-list.lefthover,
+.overall-list.righthover {
+  width: 250px;
+  height: 18px;
+  border: 1px solid rgb(235, 40, 85);
+  border-top-width: 0px;
+  background: transparent;
+  z-index: 2;
+  align-self: end;
+}
+
+.overall-list.lefthover {
+  border-radius: 0px 0px 0px 15px;
+  border-right-width: 0px;
+}
+
+.overall-list.righthover {
+  border-radius: 0px 0px 15px 0px;
+  border-left-width: 0px;
+  grid-column: 3 / 4;
+  justify-self: end;
+}
+
+.overall-list.lefthover:hover,
+.overall-list.righthover:hover {
+  background: linear-gradient(transparent, 80%, rgba(230, 71, 108, 0.4));
+}
+
+.overall-container {
+  display: grid;
+  column-gap: 7px;
+  row-gap: 0px;
+  margin: 7px 10px;
+  grid-template-columns: 20px auto auto;
+  grid-template-rows: 95px 30px 0px;
+}
+
+.overall-container > div {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 5px 10px;
+  color: rgb(215, 215, 215);
+}
+
+.idsbtn {
+  width: auto;
+  height: 95px;
+  padding: 0px;
+  margin: 3px 10px 0px 10px;
+  border-width: 0px;
+  background: transparent;
+  font-size: 14px;
+  color: rgb(215, 215, 215);
+  outline: none;
+  align-self: baseline;
+  cursor: pointer;
+}
+
+.idsbtn:hover {
+  box-shadow: 0 0 15px rgba(235, 40, 85, 0.8);
+}
+
+@media (max-height: 500px) {
+  .overall-container {
+    grid-template-rows: 83px 30px;
+  }
+}
+
+/* max-width: 908px*/
+@media (max-width: 650px) {
+  #galleryIDs {
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  #menu p {
+    margin: 3px auto 0px auto;
+    width: 70px;
+    height: 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  #menu label .icon0 {
+    width: 70px;
+    right: -5px;
+    font-size: 125%;
+    margin-bottom: 10px;
+  }
+
+  #menu label .icon0 span {
+    font-size: 0px;
+  }
+  .columes {
+    margin: 0px;
+  }
+  .columes li label .btn {
+    font-size: 0px;
+  }
+
+  .columes li label .icon1 {
+    margin: 0px;
+    overflow: visible;
+  }
+
+  .columes li label img {
+    width: 36px;
+  }
+
+  .overall-list.lefthover,
+  .overall-list.righthover {
+    width: 150px;
+  }
+}
+
+@media (max-width: 400px) {
+  .overall-list.lefthover,
+  .overall-list.righthover {
+    width: 50px;
+  }
+}
+
+@media (max-width: 200px) {
+  .overall-list.lefthover,
+  .overall-list.righthover {
+    width: 10px;
+  }
+}
+
+@media (min-width: 1900px) and (min-height: 1000px) {
+  body {
+    width: 50%;
+    transform: scale(2);
+    transform-origin: 0 0;
+  }
+}
+/* The part of the galleryIDs =^^^^^============== */
+
+/* The part of the priview =VVVVVVVV============== */
+.item1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.item2 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.item3 {
+  grid-column: 1 / 3;
+  grid-row: 6 / 7;
+}
+
+.queue {
+  grid-column: 1 / 2;
+  grid-row: 2 / 6;
+}
+
+.finished {
+  grid-column: 2 / 3;
+  grid-row: 2 / 6;
+}
+
+.Status {
+  grid-column: 1 / 3;
+  grid-row: 7 / 11;
+}
+
+.grid-container {
+  display: grid;
+  column-gap: 5px;
+  row-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  grid-template-rows: 37px repeat(4, 1fr) 37px repeat(4, 1fr);
+}
+
+.grid-container > div {
+  color: rgb(215, 215, 215);
+  font-size: 16px;
+  border-radius: 15px;
+}
+
+.item1,
+.item2,
+.item3 {
+  padding: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  border: 3px solid rgb(235, 40, 85);
+  text-align: center;
+}
+
+.queue,
+.finished,
+.Status {
+  background: rgba(45, 45, 45, 0.7);
+  padding: 10px;
+  border: 3px solid rgb(75, 75, 75);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-align: left;
+  letter-spacing: 2px;
+  white-space: pre;
+}
+
+.grid-container .Status {
+  font-size: 14px;
+}
+
+.queue:hover::-webkit-scrollbar-thumb,
+.finished:hover::-webkit-scrollbar-thumb,
+.Status:hover::-webkit-scrollbar-thumb {
+  background: rgb(100, 100, 100);
+}
+
+::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(75, 75, 75, 0.5);
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(100, 100, 100);
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+  border-width: 0px 5px 15px 5px;
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+  border-width: 15px 5px 0px 5px;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement {
+  border-width: 5px 15px 5px 0px;
+}
+
+::-webkit-scrollbar-button:horizontal:increment {
+  border-width: 5px 0px 5px 15px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* The part of the priview =^^^^^^^^============== */
